@@ -4,7 +4,13 @@
       "Bash(gh api *)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:github.com)",
-      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --eslint --yes)"
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --eslint --yes)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(node -e \"const l = require\\('/home/pedro_henrique/Documentos/098lab/node_modules/lucide-react'\\); const names = Object.keys\\(l\\).filter\\(k => k.toLowerCase\\(\\).includes\\('linkedin'\\) || k.toLowerCase\\(\\).includes\\('github'\\) || k.toLowerCase\\(\\).includes\\('instagram'\\)\\); console.log\\(names\\)\")",
+      "Bash(node -e \"const l = require\\('/home/pedro_henrique/Documentos/098lab/node_modules/lucide-react'\\); const names = Object.keys\\(l\\).filter\\(k => ['Globe','Link','Share2','AtSign','Send'].includes\\(k\\)\\); console.log\\(names\\)\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3098)",
+      "WebFetch(domain:landonorris.com)"
     ]
   }
 }
