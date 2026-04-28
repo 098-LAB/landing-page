@@ -61,13 +61,13 @@ function ProjectCard({
       ref={ref}
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : {}}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
+      transition={{ duration: 0.01, delay: index * 0.1 }}
       className={`group relative border border-concreto/25 rounded-2xl overflow-hidden ${project.span}`}
     >
-      {/* Clip-path wipe reveal */}
+      {/* Clip-path wipe reveal — starts covering card, wipes right to reveal */}
       <motion.div
-        initial={{ clipPath: "inset(0 100% 0 0)" }}
-        animate={inView ? { clipPath: "inset(0 0% 0 0)" } : {}}
+        initial={{ clipPath: "inset(0 0% 0 0)" }}
+        animate={inView ? { clipPath: "inset(0 0% 0 100%)" } : {}}
         transition={{ duration: 0.9, delay: 0.1 + index * 0.12, ease: [0.76, 0, 0.24, 1] }}
         className="absolute inset-0 z-10 bg-grafite pointer-events-none"
       />
