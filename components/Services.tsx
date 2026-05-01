@@ -22,15 +22,15 @@ import {
 } from "lucide-react";
 
 const services = [
-  { icon: Search, title: "UX Research", description: "Investigação do contexto, comportamentos e necessidades dos usuários para embasar decisões com dados reais.", tag: "Estratégia", accent: "#00FB64" },
-  { icon: Target, title: "UX Strategy", description: "Diretrizes de experiência alinhadas ao negócio, produto e usuários — antes de qualquer pixel.", tag: "Estratégia", accent: "#00FB64" },
-  { icon: Paintbrush, title: "UI Design", description: "Interfaces visuais coerentes, modernas e funcionais que comunicam com clareza e guiam com naturalidade.", tag: "Design", accent: "#E6FF00" },
-  { icon: LayoutGrid, title: "Design Systems", description: "Sistemas escaláveis com componentes documentados, tokens e guidelines para consistência total.", tag: "Design", accent: "#E6FF00" },
-  { icon: Layers, title: "Prototipação", description: "Protótipos de alta fidelidade para validar hipóteses e testar fluxos antes do desenvolvimento.", tag: "Design", accent: "#E6FF00" },
-  { icon: Code2, title: "Dev Front-end", description: "Código limpo e performático com React/Next.js. Design implementado com fidelidade obsessiva.", tag: "Dev", accent: "#00FB64" },
-  { icon: Globe, title: "Landing Pages & Sites", description: "Páginas com foco em conversão, performance e identidade visual sólida. Do conceito ao deploy.", tag: "Dev", accent: "#00FB64" },
-  { icon: Smartphone, title: "Produtos Digitais", description: "Desenvolvimento de produtos do zero: pesquisa, design e código com visão integrada de produto.", tag: "Produto", accent: "#00FB64" },
-  { icon: Accessibility, title: "Consultoria em Acessibilidade", description: "Auditoria e implementação de WCAG para garantir experiências inclusivas para todas as pessoas.", tag: "A11y", accent: "#E6FF00" },
+  { icon: Search, title: "UX Research", description: "Investigação do contexto, comportamentos e necessidades dos usuários para embasar decisões com dados reais.", tag: "Estratégia", accent: "#009E40" },
+  { icon: Target, title: "UX Strategy", description: "Diretrizes de experiência alinhadas ao negócio, produto e usuários — antes de qualquer pixel.", tag: "Estratégia", accent: "#009E40" },
+  { icon: Paintbrush, title: "UI Design", description: "Interfaces visuais coerentes, modernas e funcionais que comunicam com clareza e guiam com naturalidade.", tag: "Design", accent: "#3E5151" },
+  { icon: LayoutGrid, title: "Design Systems", description: "Sistemas escaláveis com componentes documentados, tokens e guidelines para consistência total.", tag: "Design", accent: "#3E5151" },
+  { icon: Layers, title: "Prototipação", description: "Protótipos de alta fidelidade para validar hipóteses e testar fluxos antes do desenvolvimento.", tag: "Design", accent: "#3E5151" },
+  { icon: Code2, title: "Dev Front-end", description: "Código limpo e performático com React/Next.js. Design implementado com fidelidade obsessiva.", tag: "Dev", accent: "#009E40" },
+  { icon: Globe, title: "Landing Pages & Sites", description: "Páginas com foco em conversão, performance e identidade visual sólida. Do conceito ao deploy.", tag: "Dev", accent: "#009E40" },
+  { icon: Smartphone, title: "Produtos Digitais", description: "Desenvolvimento de produtos do zero: pesquisa, design e código com visão integrada de produto.", tag: "Produto", accent: "#009E40" },
+  { icon: Accessibility, title: "Consultoria em Acessibilidade", description: "Auditoria e implementação de WCAG para garantir experiências inclusivas para todas as pessoas.", tag: "A11y", accent: "#3E5151" },
 ];
 
 function TiltCard({
@@ -75,7 +75,7 @@ function TiltCard({
         transformStyle: "preserve-3d",
         perspective: 800,
       }}
-      className="group relative border border-concreto/25 bg-concreto/8 rounded-2xl p-6 cursor-default transition-colors duration-400 hover:border-opacity-60"
+      className="group relative border border-concreto/20 bg-concreto/5 rounded-2xl p-6 cursor-default transition-colors duration-400 hover:border-concreto/50"
     >
       {/* Hover surface glow */}
       <motion.div
@@ -101,8 +101,8 @@ function TiltCard({
             {service.tag}
           </span>
         </div>
-        <h3 className="text-offwhite font-semibold text-sm mb-2.5 tracking-tight">{service.title}</h3>
-        <p className="text-offwhite/38 text-xs leading-relaxed font-light">{service.description}</p>
+        <h3 className="text-grafite font-semibold text-sm mb-2.5 tracking-tight">{service.title}</h3>
+        <p className="text-grafite/50 text-xs leading-relaxed font-light">{service.description}</p>
       </div>
     </motion.div>
   );
@@ -118,14 +118,14 @@ export default function Services() {
   const bgX = useTransform(scrollYProgress, [0, 1], ["-3%", "3%"]);
 
   return (
-    <section id="servicos" ref={ref} className="py-28 md:py-36 relative overflow-hidden">
+    <section id="servicos" ref={ref} className="py-28 md:py-36 relative overflow-hidden bg-white">
       {/* Parallax bg text */}
       <motion.div
         style={{ x: bgX }}
         className="absolute -bottom-8 left-0 pointer-events-none select-none"
         aria-hidden
       >
-        <span className="font-black text-[14rem] leading-none tracking-tighter text-offwhite/[0.018]">
+        <span className="font-black text-[14rem] leading-none tracking-tighter text-grafite/[0.04]">
           SERVIÇOS
         </span>
       </motion.div>
@@ -141,9 +141,9 @@ export default function Services() {
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-8 bg-verde" />
-              <span className="text-verde/70 text-xs font-mono tracking-[0.22em] uppercase">Serviços</span>
+              <span className="text-concreto text-xs font-mono tracking-[0.22em] uppercase">Serviços</span>
             </div>
-            <h2 className="text-[clamp(1.8rem,3.8vw,3rem)] font-black leading-tight tracking-tight text-offwhite">
+            <h2 className="text-[clamp(1.8rem,3.8vw,3rem)] font-black leading-tight tracking-tight text-grafite">
               Do conceito ao produto,{" "}
               <span className="text-verde">com intenção</span>.
             </h2>
@@ -152,7 +152,7 @@ export default function Services() {
             initial={{ opacity: 0 }}
             animate={headInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-offwhite/35 text-sm max-w-xs leading-relaxed font-light"
+            className="text-grafite/50 text-sm max-w-xs leading-relaxed font-light"
           >
             Cada serviço é uma camada de valor. Trabalhamos de forma integrada ou pontual, conforme a necessidade do projeto.
           </motion.p>

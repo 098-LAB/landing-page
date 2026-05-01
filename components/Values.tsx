@@ -32,8 +32,8 @@ const values = [
 ];
 
 const accentMap: Record<string, string> = {
-  verde: "text-verde border-verde/20 bg-verde/5 hover:border-verde/40 hover:bg-verde/10",
-  amarelo: "text-amarelo border-amarelo/20 bg-amarelo/5 hover:border-amarelo/40 hover:bg-amarelo/10",
+  verde: "border-verde/30 bg-verde/5 hover:border-verde/50 hover:bg-verde/10",
+  amarelo: "border-amarelo/50 bg-amarelo/10 hover:border-amarelo/70 hover:bg-amarelo/15",
 };
 
 export default function Values() {
@@ -41,10 +41,10 @@ export default function Values() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-concreto/10 relative">
-      <div className="absolute inset-0 opacity-[0.015]"
+    <section ref={ref} className="py-24 md:py-32 bg-white relative">
+      <div className="absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage: "radial-gradient(#F1F7F1 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(#202020 1px, transparent 1px)",
           backgroundSize: "32px 32px",
         }}
       />
@@ -57,10 +57,10 @@ export default function Values() {
           className="mb-16 max-w-xl"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-verde/80 text-xs font-mono tracking-[0.2em] uppercase">Pilares</span>
-            <div className="h-px flex-1 max-w-12 bg-verde/30" />
+            <span className="text-concreto text-xs font-mono tracking-[0.2em] uppercase">Pilares</span>
+            <div className="h-px flex-1 max-w-12 bg-verde/60" />
           </div>
-          <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-tight tracking-tight text-offwhite">
+          <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-tight tracking-tight text-grafite">
             Valores que guiam cada entrega
           </h2>
         </motion.div>
@@ -80,25 +80,24 @@ export default function Values() {
                   className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 ${
                     value.accent === "verde"
                       ? "bg-verde/10 group-hover:bg-verde/20"
-                      : "bg-amarelo/10 group-hover:bg-amarelo/20"
+                      : "bg-amarelo/20 group-hover:bg-amarelo/30"
                   }`}
                 >
                   <Icon
                     size={20}
-                    className={value.accent === "verde" ? "text-verde" : "text-amarelo"}
+                    style={{ color: value.accent === "verde" ? "#009E40" : "#202020" }}
                   />
                 </div>
 
-                <h3 className="text-offwhite font-semibold text-xl mb-3 tracking-tight">
+                <h3 className="text-grafite font-semibold text-xl mb-3 tracking-tight">
                   {value.title}
                 </h3>
-                <p className="text-offwhite/60 text-sm leading-relaxed mb-4 font-light">
+                <p className="text-grafite/60 text-sm leading-relaxed mb-4 font-light">
                   {value.description}
                 </p>
                 <p
-                  className={`text-xs font-medium tracking-wide ${
-                    value.accent === "verde" ? "text-verde/70" : "text-amarelo/70"
-                  }`}
+                  className="text-xs font-medium tracking-wide"
+                  style={{ color: value.accent === "verde" ? "#009E40" : "#202020", opacity: 0.7 }}
                 >
                   {value.detail}
                 </p>

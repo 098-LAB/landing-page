@@ -23,7 +23,7 @@ export default function Home() {
         <Values />
         <StickyFeatures />
         <Services />
-        <Portfolio />
+        {/* <Portfolio /> */}
         <Process />
         <CTA />
       </main>

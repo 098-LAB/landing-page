@@ -38,10 +38,10 @@ function CountUp({
 }
 
 const stats = [
-  { value: 40, suffix: "+", label: "Projetos entregues", color: "#00FB64" },
-  { value: 100, suffix: "%", label: "Comprometimento", color: "#E6FF00" },
-  { value: 3, suffix: "x", label: "Mais rápido com Design Systems", color: "#00FB64" },
-  { value: 0, suffix: "", label: "Vaidade sem propósito", color: "#E6FF00" },
+  { value: 40, suffix: "+", label: "Projetos entregues", color: "#00C44D" },
+  { value: 100, suffix: "%", label: "Comprometimento", color: "#3E5151" },
+  { value: 3, suffix: "x", label: "Mais rápido com Design Systems", color: "#00C44D" },
+  { value: 0, suffix: "", label: "Vaidade sem propósito", color: "#3E5151" },
 ];
 
 export default function About() {
@@ -61,11 +61,11 @@ export default function About() {
   const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
 
   return (
-    <section id="sobre" ref={sectionRef} className="py-28 md:py-36 relative overflow-hidden">
+    <section id="sobre" ref={sectionRef} className="py-28 md:py-36 relative overflow-hidden bg-white">
       {/* Subtle left border accent */}
       <motion.div
         style={{ scaleY: scrollYProgress }}
-        className="absolute left-0 top-0 bottom-0 w-0.5 bg-verde/30 origin-top"
+        className="absolute left-0 top-0 bottom-0 w-0.5 bg-verde/60 origin-top"
       />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -74,11 +74,11 @@ export default function About() {
           <motion.div style={{ x: textX, opacity }}>
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-8 bg-verde" />
-              <span className="text-verde/70 text-xs font-mono tracking-[0.22em] uppercase">
+              <span className="text-concreto text-xs font-mono tracking-[0.22em] uppercase">
                 Sobre a 098lab
               </span>
             </div>
-            <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-black leading-[1.02] tracking-tight text-offwhite">
+            <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-black leading-[1.02] tracking-tight text-grafite">
               Um laboratório onde{" "}
               <span className="relative">
                 <span className="text-verde">design</span>
@@ -86,11 +86,11 @@ export default function About() {
                   initial={{ scaleX: 0 }}
                   animate={inView ? { scaleX: 1 } : {}}
                   transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-verde/50 origin-left"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-verde/70 origin-left"
                 />
               </span>{" "}
               e{" "}
-              <span className="text-amarelo">tecnologia</span>{" "}
+              <span className="text-concreto">tecnologia</span>{" "}
               se encontram.
             </h2>
           </motion.div>
@@ -100,14 +100,14 @@ export default function About() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="text-offwhite/50 text-base md:text-lg leading-relaxed font-light mb-4">
+            <p className="text-grafite/60 text-base md:text-lg leading-relaxed font-light mb-4">
               A 098lab é um laboratório de UX/UI Design e desenvolvimento digital especializado
               em criar produtos e experiências com foco em{" "}
-              <span className="text-offwhite/85 font-normal">qualidade</span>,{" "}
-              <span className="text-offwhite/85 font-normal">clareza</span> e{" "}
-              <span className="text-offwhite/85 font-normal">impacto</span>.
+              <span className="text-grafite font-normal">qualidade</span>,{" "}
+              <span className="text-grafite font-normal">clareza</span> e{" "}
+              <span className="text-grafite font-normal">impacto</span>.
             </p>
-            <p className="text-offwhite/35 text-sm leading-relaxed font-light">
+            <p className="text-grafite/50 text-sm leading-relaxed font-light">
               Trabalhamos na interseção entre experiência do usuário, design de interfaces,
               acessibilidade e desenvolvimento — transformando necessidades reais em soluções
               que geram resultado.
@@ -116,40 +116,7 @@ export default function About() {
         </div>
 
         {/* Parallax visual strip */}
-        <div className="relative h-52 md:h-72 rounded-2xl overflow-hidden mb-16 border border-concreto/20">
-          <motion.div style={{ y: imgY }} className="absolute inset-[-10%] flex items-center justify-center">
-            <div
-              className="absolute inset-0"
-              style={{
-                background: "linear-gradient(135deg, #3E5151 0%, #202020 50%, #202020 100%)",
-              }}
-            />
-            <div
-              className="absolute inset-0 opacity-[0.04]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(#F1F7F1 1px, transparent 1px), linear-gradient(90deg, #F1F7F1 1px, transparent 1px)",
-                backgroundSize: "48px 48px",
-              }}
-            />
-            {/* Floating text blocks */}
-            <div className="relative z-10 flex flex-wrap justify-center gap-4 px-8">
-              {["UX Research", "Design Systems", "Prototipação", "Front-end", "Acessibilidade", "Estratégia"].map(
-                (tag, i) => (
-                  <motion.span
-                    key={tag}
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ delay: 0.5 + i * 0.07 }}
-                    className="px-4 py-2 rounded-full border border-offwhite/10 bg-offwhite/5 backdrop-blur-sm text-offwhite/60 text-xs font-medium tracking-wide"
-                  >
-                    {tag}
-                  </motion.span>
-                )
-              )}
-            </div>
-          </motion.div>
-        </div>
+        
 
         {/* Stats */}
         <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -159,7 +126,7 @@ export default function About() {
               initial={{ opacity: 0, y: 32 }}
               animate={statsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative border border-concreto/25 rounded-2xl p-6 overflow-hidden hover:border-verde/30 transition-colors duration-500"
+              className="group relative border border-concreto/30 rounded-2xl p-6 overflow-hidden hover:border-verde/50 transition-colors duration-500"
             >
               {/* Hover glow */}
               <div
@@ -177,7 +144,7 @@ export default function About() {
                   delay={i * 0.2}
                 />
               </div>
-              <div className="text-offwhite/40 text-xs font-light leading-snug">{stat.label}</div>
+              <div className="text-grafite/50 text-xs font-light leading-snug">{stat.label}</div>
             </motion.div>
           ))}
         </div>
