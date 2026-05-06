@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const links = [
   { label: "Sobre", href: "#sobre" },
@@ -28,35 +29,34 @@ export default function Nav() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-grafite/90 backdrop-blur-md border-b border-concreto/30"
-            : "bg-transparent"
-        }`}
+        className="fixed top-4 inset-x-0 z-50 flex justify-center pointer-events-none px-4"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2 group">
-            <span className="text-verde font-mono text-sm font-bold tracking-widest group-hover:text-amarelo transition-colors duration-300">
-              098
-            </span>
-            <span className="text-offwhite font-semibold text-base tracking-tight">
-              lab
-            </span>
+        <div
+          className={`pointer-events-auto w-full max-w-5xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between rounded-full transition-all duration-500 ${
+            scrolled
+              ? "bg-grafite/60 backdrop-blur-xl border border-offwhite/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
+              : "bg-grafite/30 backdrop-blur-md border border-offwhite/5"
+          }`}
+        >
+          {/* Logo updated to use the new animated component */}
+          <a href="#" className="flex items-center group relative h-7 w-auto transition-transform hover:scale-105 duration-300">
+            <Logo showFull={scrolled} className="h-full w-auto drop-shadow-md" />
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          {/* Nav links updated with pill hover effect */}
+          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-offwhite/60 hover:text-verde text-sm font-medium tracking-wide transition-colors duration-300 relative group"
+                className="text-offwhite/70 hover:text-offwhite text-sm font-medium tracking-wide hover:bg-offwhite/10 rounded-full px-4 py-2 transition-all duration-300"
               >
                 {link.label}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-verde group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </nav>
 
+          {/* CTA button inside the pill */}
           <div className="hidden md:flex items-center gap-4">
             <a
               href="#contato"
@@ -68,7 +68,7 @@ export default function Nav() {
 
           <button
             onClick={() => setOpen(true)}
-            className="md:hidden text-offwhite/80 hover:text-verde transition-colors"
+            className="md:hidden text-offwhite/80 hover:text-verde transition-colors p-2"
             aria-label="Abrir menu"
           >
             <Menu size={22} />
@@ -85,13 +85,13 @@ export default function Nav() {
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[60] bg-grafite flex flex-col"
           >
-            <div className="px-6 h-16 flex items-center justify-between border-b border-concreto/30">
-              <span className="text-verde font-mono text-sm font-bold tracking-widest">
-                098lab
-              </span>
+            <div className="px-6 h-20 flex items-center justify-between border-b border-concreto/30">
+              <div className="flex items-center">
+                <Logo showFull={true} className="h-7 w-auto" />
+              </div>
               <button
                 onClick={() => setOpen(false)}
-                className="text-offwhite/80 hover:text-verde transition-colors"
+                className="text-offwhite/80 hover:text-verde transition-colors p-2"
                 aria-label="Fechar menu"
               >
                 <X size={22} />
