@@ -1,17 +1,57 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+const anekLatin = localFont({
+  src: [
+    {
+      path: "./fonts/anek-latin/AnekLatin-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/anek-latin/AnekLatin-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/anek-latin/AnekLatin-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/anek-latin/AnekLatin-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-anek-latin",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const anekLatinSemiExpanded = localFont({
+  src: [
+    {
+      path: "./fonts/anek-latin-semi-expanded/AnekLatin_SemiExpanded-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/anek-latin-semi-expanded/AnekLatin_SemiExpanded-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/anek-latin-semi-expanded/AnekLatin_SemiExpanded-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/anek-latin-semi-expanded/AnekLatin_SemiExpanded-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-anek-latin-semi-expanded",
 });
 
 export const metadata: Metadata = {
@@ -36,9 +76,9 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${outfit.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${anekLatin.variable} ${anekLatinSemiExpanded.variable} h-full antialiased`}
     >
-      <body className="min-h-[100dvh] flex flex-col bg-grafite text-offwhite">
+      <body className="min-h-[100dvh] flex flex-col bg-grafite text-offwhite font-anek-latin">
         {children}
       </body>
     </html>
