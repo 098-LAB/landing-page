@@ -95,7 +95,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[90dvh] flex flex-col justify-center items-center overflow-hidden pt-20 pb-32 md:pt-24 md:pb-40 bg-[#000000] w-full"
+      className="relative min-h-[90dvh] flex flex-col justify-center items-center overflow-hidden pt-20 pb-48 md:pt-24 md:pb-64 bg-[#000000] w-full"
     >
 
 
@@ -191,8 +191,9 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.8 }}
-        className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none hidden sm:flex"
+        className="absolute bottom-24 md:bottom-36 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none hidden sm:flex"
       >
+
         <div className="flex gap-2 text-[10px] uppercase tracking-widest text-offwhite/30">
           <span>[</span> Scroll <span>]</span>
         </div>

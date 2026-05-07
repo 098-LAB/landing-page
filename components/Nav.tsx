@@ -29,7 +29,7 @@ export default function Nav() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed top-4 inset-x-0 z-50 flex justify-center pointer-events-none px-4"
+        className="fixed top-4 inset-x-0 z-[100] flex justify-center pointer-events-none px-4"
       >
         <div
           className={`pointer-events-auto w-full max-w-5xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between rounded-full transition-all duration-500 ${
