@@ -68,12 +68,12 @@ export default function Marquee() {
   const rotate = useTransform(scrollYProgress, [0, 1], [-2, 2]);
 
   return (
-    <div ref={ref} className="py-8 relative overflow-hidden border-y border-concreto/20">
-      <motion.div style={{ rotate }} className="flex flex-col gap-3">
-        <div className="py-2">
+    <div ref={ref} className="pt-16 pb-12 relative overflow-hidden bg-gradient-to-b from-black to-[#0a0a0a] border-b border-concreto/20">
+      <motion.div style={{ rotate }} className="flex flex-col gap-4">
+        <div className="py-3">
           <Strip direction={1} speed={30} />
         </div>
-        <div className="py-2 bg-verde/90">
+        <div className="py-3 bg-verde/90">
           <Strip direction={-1} speed={24} accent />
         </div>
       </motion.div>

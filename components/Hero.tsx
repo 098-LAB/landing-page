@@ -34,7 +34,7 @@ function WordReveal({
           key={i} 
           className="inline-block overflow-hidden" 
           style={{ 
-            marginRight: "0.25em", 
+            marginRight: "0.08em", 
             paddingBottom: "0.2em",
             paddingTop: "0.1em",
             paddingRight: "0.1em",
@@ -43,8 +43,8 @@ function WordReveal({
         >
           <motion.span
             className="inline-block"
-            initial={{ y: "120%", rotate: 4, filter: "blur(8px)" }}
-            animate={inView ? { y: "0%", rotate: 0, filter: "blur(0px)" } : {}}
+            initial={{ y: "150%", rotate: 8, opacity: 0, filter: "blur(12px)" }}
+            animate={inView ? { y: "0%", rotate: 0, opacity: 1, filter: "blur(0px)" } : {}}
             transition={{
               duration: 1.2,
               delay: delay + i * 0.08,
@@ -119,7 +119,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Massive H1 (Max 2 lines) */}
-        <h1 className="text-[clamp(2.5rem,7vw,6.5rem)] font-anek-semi font-black leading-[1.1] tracking-[-0.04em] text-offwhite mb-10 w-full max-w-5xl text-center">
+        <h1 className="text-[clamp(2.5rem,7vw,6.5rem)] font-anek-semi font-black leading-[0.80] tracking-[-0.04em] text-offwhite mb-10 w-full max-w-5xl text-center">
           <WordReveal text="Construindo o futuro com" inView={inView} delay={0.2} />
           
           <motion.span
@@ -127,7 +127,7 @@ export default function Hero() {
             animate={inView ? { 
               opacity: 1, 
               scale: 1,
-              y: [0, -10, 0],
+              y: [0, -8, 0],
               rotate: [0, -1, 0]
             } : {}}
             transition={{ 
@@ -135,13 +135,11 @@ export default function Hero() {
               y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
               rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" }
             }}
-            className="inline-flex items-center gap-3 md:gap-5 ml-2 align-middle"
+            className="inline-flex items-center ml-2 align-middle"
           >
-            <span className="text-offwhite/10 text-[0.8em] font-light">[</span>
-            <span className="bg-verde text-black px-4 py-1 rounded-none shadow-[4px_4px_0px_#E6FF00] text-[0.65em] tracking-tight leading-none font-bold">
+            <span className="bg-verde text-black px-3 py-1 md:px-4 md:py-1.5 rounded-none shadow-[4px_4px_0px_#E6FF00] text-[0.85em] md:text-[0.9em] tracking-tight leading-none font-bold">
               UI/UX
             </span>
-            <span className="text-offwhite/10 text-[0.8em] font-light">]</span>
           </motion.span>
         </h1>
 
@@ -193,7 +191,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.8 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none"
+        className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none hidden sm:flex"
       >
         <div className="flex gap-2 text-[10px] uppercase tracking-widest text-offwhite/30">
           <span>[</span> Scroll <span>]</span>
