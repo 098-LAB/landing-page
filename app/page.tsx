@@ -19,15 +19,16 @@ export default function Home() {
       <main>
         <Hero />
         <Marquee />
+        {/* <About /> */}
         <About />
-        <Values />
+        {/* <Values />
         <StickyFeatures />
         <Services />
-        {/* <Portfolio /> */}
+        <Portfolio />
         <Process />
-        <CTA />
+        <CTA /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

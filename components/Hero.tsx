@@ -95,7 +95,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[90dvh] flex flex-col justify-center items-center overflow-hidden pt-20 pb-48 md:pt-24 md:pb-64 bg-[#000000] w-full"
+      className="relative min-h-[90dvh] flex flex-col justify-center items-center overflow-hidden pt-20 pb-48 md:pt-24 md:pb-64 bg-grafite w-full"
     >
 
 
